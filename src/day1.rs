@@ -39,7 +39,7 @@ fn solver_part2(input: &Vec<i32>) -> i32 {
             let inverse = 2020 - partial_sum;
 
             if seen.contains(&inverse) {
-                return inverse * partial_sum;
+                return inverse * *i * *j;
             }
         }
     }
