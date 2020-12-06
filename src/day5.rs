@@ -46,13 +46,7 @@ pub fn get_all_seat_ids(boarding_passes: &Vec<String>) -> Vec<u32> {
             }
         }).collect::<String>();
         
-        let row_binary: String = binary_boarding_pass.chars().take(7).collect();
-        let col_binary: String = binary_boarding_pass.chars().skip(7).take(3).collect();
-
-        let row = u32::from_str_radix(row_binary.as_str(), 2).unwrap();
-        let col = u32::from_str_radix(col_binary.as_str(), 2).unwrap();
-
-        let seat_id = row * 8 + col;
+        let seat_id = u32::from_str_radix(binary_boarding_pass.as_str(), 2).unwrap();
 
         seat_ids.push(seat_id);
     }
