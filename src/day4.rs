@@ -2,7 +2,11 @@ use std::collections::HashMap;
 
 #[aoc_generator(day4)]
 pub fn generator_input(input: &str) -> Vec<HashMap<String, String>> {
-    /* How to reformat for ease of use:
+    /* 
+     * REFLECTION: Why not just split on \n\n? Also, could have used the opportunity to play with Option types or Regex.
+     * 
+     * 
+     * Algorithm to reformat for ease of use:
      * 1. Convert newlines to tildes.
      * 2. Double tildes means a break between passports, change back to single newline.
      * 3. Single tilde means we're within a passport, change it to a space to keep whole passport in one line.
